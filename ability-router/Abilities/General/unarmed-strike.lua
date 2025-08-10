@@ -1,7 +1,6 @@
 local Ability = hotLoad("../Base/attack.lua")
 
 Ability.Name = "Unarmed Strike"
-Ability.DamageType = "Bludgeoning"
 
 function Ability:AttackFormula(caster, target)
     local _, STR = RPR.GetSkill(caster, "Strength")

@@ -3,7 +3,6 @@ local Ability = hotLoad("ability.lua")
 Ability.SaveType = "AC"
 Ability.UseMessage = "%s used %s on %s."
 Ability.RollMessage = "%s rolls %s vs %d (%s) = %s"
-Ability.FlavorText = ""
 
 function Ability:AttackFormula(caster, target)
     return 0
@@ -22,10 +21,6 @@ function Ability:DamageFormula(caster, target)
     return 0
 end
 
-function Ability:GetFlavorText(caster, targets)
-    return self.FlavorText
-end
-
 function Ability:AfterHit(caster, target)
     -- you can fill this in inheriting abilities
 end
@@ -37,11 +32,6 @@ function Ability:Run(caster, targets)
     end
 
     local chatMessage = self.UseMessage:format(caster:GetName(), self.Name, table.concat(targetNames, ", "))
-    local flavorText = self:GetFlavorText(caster, targets)
-    if (flavorText ~= "") then
-        chatMessage = chatMessage .. '\n' .. flavorText
-    end
-
     TotChat.SendLocal(caster, chatMessage, 20)
 
     for _, target in ipairs(targets) do
