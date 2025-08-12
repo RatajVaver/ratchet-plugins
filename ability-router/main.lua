@@ -1,6 +1,6 @@
 -- This is an example of RPR ability router, it will redirect all abilities listed in list.lua to specific hot-loaded files.
 
-local ABILITIES = hotLoad("list")
+local ABILITIES = hotLoad("list.lua")
 
 function getAbilityFile(id)
     return ABILITIES[id]
