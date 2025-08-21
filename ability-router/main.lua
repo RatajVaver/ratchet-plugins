@@ -17,7 +17,7 @@ end
 function useAbility(player, abilityId, targets)
     local abilityFile = getAbilityFile(abilityId)
     if(abilityFile)then
-        local path = string.format("%s/Abilities/%s.lua", PLUGIN_PATH, abilityFile)
+        local path = string.format("%s/Abilities/%s.lua", PLUGIN_REALPATH, abilityFile)
         if(fileExists(path))then
             local ability = hotLoad(string.format("Abilities/%s.lua", abilityFile))
             if(ability)then

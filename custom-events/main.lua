@@ -29,3 +29,10 @@ function targetsEvent(player, targets, args)
     end
 end
 on("customEvent3", targetsEvent)
+
+-- Scheduled event by schedule.json
+
+function scheduledEvent()
+    print("Well, well, well.")
+end
+on("scheduled_event", scheduledEvent)

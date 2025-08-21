@@ -2,7 +2,6 @@
 -- data can be tied to a player and their character and persist even through wipes
 -- we also use export function to be able to use this plugin as a module that other plugins can communicate with
 -- in other plugins we can use: exports.storage.get(player) and exports.storage.set(player, data)
--- make sure that you use correct plugin name (path) as a key of the exports array
 -- also make sure that the path "data/characters" relative to your working directory exists
 
 function getCharData(player)
