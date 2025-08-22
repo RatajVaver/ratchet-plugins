@@ -1,4 +1,4 @@
-local Ability = hotLoad("ability.lua")
+local Ability = include("ability.lua")
 
 Ability.SaveType = "AC"
 Ability.UseMessage = "%s used %s on %s."

@@ -1,6 +1,6 @@
 -- This is an example of RPR ability router, it will redirect all abilities listed in list.lua to specific hot-loaded files.
 
-local ABILITIES = hotLoad("list.lua")
+local ABILITIES = include("list.lua")
 
 function getAbilityFile(id)
     return ABILITIES[id]
@@ -19,7 +19,7 @@ function useAbility(player, abilityId, targets)
     if(abilityFile)then
         local path = string.format("%s/Abilities/%s.lua", PLUGIN_REALPATH, abilityFile)
         if(fileExists(path))then
-            local ability = hotLoad(string.format("Abilities/%s.lua", abilityFile))
+            local ability = include(string.format("Abilities/%s.lua", abilityFile))
             if(ability)then
                 ability:Run(player, targets)
             else

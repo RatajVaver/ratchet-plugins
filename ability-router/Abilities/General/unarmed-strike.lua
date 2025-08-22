@@ -1,4 +1,4 @@
-local Ability = hotLoad("../Base/attack.lua")
+local Ability = include("../Base/attack.lua")
 
 Ability.Name = "Unarmed Strike"
 
