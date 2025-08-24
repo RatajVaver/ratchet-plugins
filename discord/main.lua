@@ -22,6 +22,7 @@ export("send", sendWebhookMessage)
 on("discord_webhook", sendWebhookMessage)
 
 function onLoad()
-    sendWebhookMessage("Server is fully loaded and you can connect!")
+    local now = os.time()
+    sendWebhookMessage("Server is fully loaded and you can connect!\nIt took the server hamster " .. (now - START_TIME) .. " seconds to boot it up.")
 end
 once("server_start", onLoad) -- send this only once when the server loads, not every time plugin is reloaded
