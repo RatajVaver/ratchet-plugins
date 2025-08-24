@@ -8,4 +8,4 @@ This repository contains official and community-made plugins for Ratchet (Conan 
 
 You can use these plugins on your server, or take them apart as they mainly serve as examples to learn from.
 
-For more information read the [documentation](https://ratajmods.net/ratchet/docs) and join my [Discord](https://discord.gg/3WJNxCTn8m).
+For more information read the [documentation](https://ratchet.ratajmods.net) and join my [Discord](https://discord.gg/3WJNxCTn8m).
