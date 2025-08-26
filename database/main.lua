@@ -13,7 +13,12 @@ export("connect", getConnection)
 
 if(getConnection())then
     db:query("SELECT value FROM settings WHERE key = 'motd'", function(success, error, rows)
-        print(rows[1].value)
+        if(success)then
+            print(rows[1].value)
+        else
+            print(error)
+            print(rows)
+        end
     end)
 else
     print("Failed to open database!")
