@@ -10,7 +10,7 @@ function getCharData(player)
         local steamId = player:GetSteamID()
         if(name and steamId ~= "0")then
             local path = ("data/characters/%s_%s.json"):format(steamId, name)
-            return JSON.load("data/characters/" .. name .. ".json") or {}
+            return JSON.load(path) or {}
         end
     end
     return {}
