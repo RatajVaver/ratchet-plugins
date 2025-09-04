@@ -11,7 +11,7 @@ function onPuppetInteract(player, args)
     end
 
     if(TotSudo.HasCharTag(player, "monster"))then
-        TotChat.Warn(player, "You are already using monster sheet! Reset first.")
+        player:Notify("Warning", "You are already using monster sheet! Reset first.", Color(255,150,20))
         return
     end
 
@@ -28,13 +28,13 @@ function onPuppetInteract(player, args)
         RPR.ImportSheet(player, sheet)
     end
 
-    TotChat.Notify( player, ("Monster sheet applied (%s)!"):format( puppet:GetName() ) )
+    player:Notify( "Fist", ("Monster sheet applied (%s)!"):format( puppet:GetName() ), Color(255,80,80) )
 end
 on("mg_interact", onPuppetInteract)
 
 function resetToOriginal(player)
     if(not TotSudo.HasCharTag(player, "monster"))then
-        TotChat.Warn(player, "You are not currently using monster sheet!")
+        player:Notify("Warning", "You are not currently using monster sheet!", Color(255,150,20))
         return
     end
 

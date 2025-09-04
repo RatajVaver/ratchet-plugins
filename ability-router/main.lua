@@ -2,6 +2,8 @@
 
 local ABILITIES = include("list.lua")
 
+include("aoe.lua")
+
 function getAbilityFile(id)
     return ABILITIES[id]
 end

@@ -9,9 +9,9 @@ function saveSheet(player)
     }
 
     if(exports.storage.set(player, data))then
-        TotChat.Notify(player, "Character sheet saved!")
+        player:Notify("Check", "Character sheet saved!", Color(50,255,50))
     else
-        TotChat.Warn(player, "Failed to save character sheet!")
+        player:Notify("Warning", "Failed to save character sheet!", Color(255,150,20))
     end
 end
 on("savesheet", saveSheet)
@@ -33,9 +33,9 @@ function loadSheet(player)
             TotCustom.SetAccessories(player, data.accessories)
         end
 
-        TotChat.Notify(player, "Character sheet loaded!")
+        player:Notify("Person", "Character sheet loaded!", Color(50,255,50))
     else
-        TotChat.Warn(player, "You don't have saved character sheet!")
+        player:Notify("Warning", "You don't have saved character sheet!", Color(255,150,20))
     end
 end
 on("loadsheet", loadSheet)
