@@ -36,3 +36,24 @@ function scheduledEvent()
     print("Well, well, well.")
 end
 on("scheduled_event", scheduledEvent)
+
+-- Admin Tool interaction
+
+function zoneEnter(player, tool, arg)
+    player:Notify("Footprints", "You have entered a zone!", Color(66, 245, 200))
+end
+on("zone_enter", zoneEnter)
+
+function zoneExit(player, tool, arg)
+    player:Notify("Footprints", "You have left a zone!", Color(66, 245, 200))
+end
+on("zone_exit", zoneExit)
+
+function generalInteraction(player, tool, arg)
+    if(getType(tool) == "TotPuppet")then
+        player:Notify("Student", "You're interacting with: " .. tool:GetName(), Color(164, 227, 98))
+    else
+        player:Notify("Student", "You're interacting with: " .. tool:GetActorName(), Color(164, 227, 98))
+    end
+end
+on("interact", generalInteraction)
