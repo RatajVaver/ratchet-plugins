@@ -41,6 +41,11 @@ on("scheduled_event", scheduledEvent)
 
 function zoneEnter(player, tool, arg)
     player:Notify("Footprints", "You have entered a zone!", Color(66, 245, 200))
+
+    local zoneName = tool:GetName()
+    if(zoneName ~= "")then
+        player:Notify("Info", "Zone name: " .. zoneName, Color(66, 120, 245))
+    end
 end
 on("zone_enter", zoneEnter)
 
