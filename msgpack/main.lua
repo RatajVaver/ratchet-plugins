@@ -15,11 +15,11 @@ local data = {
 
 local packed = mp.pack(data)
 
-local file = io.open("data/test.msgpack", "w")
+local file = io.open("ratchet/data/test.msgpack", "w")
 file:write(packed)
 file:close()
 
-local file = io.open("data/test.msgpack", "r")
+local file = io.open("ratchet/data/test.msgpack", "r")
 local packed = file:read()
 file:close()
 

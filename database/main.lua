@@ -4,7 +4,7 @@
 local db
 function getConnection()
     if(not db)then
-        db = dbConnect("sqlite3", "data/test.db")
+        db = dbConnect("sqlite3", "ratchet/data/test.db")
         print("Database connected!")
     end
     return db

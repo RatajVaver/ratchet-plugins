@@ -1,5 +1,5 @@
 -- some basic tests to play around with JSON
-local data = JSON.load('data/test.json')
+local data = JSON.load('ratchet/data/test.json')
 print(data)
 
 if(not data)then
@@ -8,9 +8,9 @@ end
 
 data.hello = "world"
 
--- saving will fail, but if we create "data" directory in our working path, it will succeed
+-- saving will fail, but if we create "ratchet/data" directory in our working path, it will succeed
 -- alternatively we could also use absolute path
-local success = JSON.save('data/test.json', data)
+local success = JSON.save('ratchet/data/test.json', data)
 print(success)
 
 -- we can even save complex data like character sheets, we just need to convert it into a table first!
@@ -37,7 +37,7 @@ function saveCharacterSheet(player)
 		}
 	end
 
-    local saved = JSON.save("data/sheet.json", sheetData)
+    local saved = JSON.save("ratchet/data/sheet.json", sheetData)
     if(saved)then
         TotChat.Notify(player, "Sheet saved!")
     else
